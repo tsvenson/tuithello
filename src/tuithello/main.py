@@ -18,7 +18,7 @@ class TuithelloApp(App):
 
     BINDINGS = [
         ("ctrl+d", "toggle_dark", "Toggle dark mode"),
-        ("ctrl+q", "quit", "Quite the game")
+        ("ctrl+q", "quit", "Quit the game")
     ]
 
     def compose(self) -> ComposeResult:
