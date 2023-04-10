@@ -1,13 +1,11 @@
 """
 Tuithello is an Othello game that runs in the terminal.
 """
-from rich.text import Text
-from rich.emoji import Emoji
-
 from textual.app import App, ComposeResult
 from textual.containers import Container
-from textual.widget import Widget
-from textual.widgets import Header, Footer, Label
+from textual.widgets import Header, Footer
+
+from tuithello.board import Board
 
 
 class TuithelloApp(App):
@@ -23,7 +21,7 @@ class TuithelloApp(App):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield Container(Label(Text(Emoji.replace('tuithello: :white_circle: :black_circle:'))), id="board")
+        yield Container(Board(), id="board")
         yield Footer()
     
     def action_toggle_dark(self) -> None:

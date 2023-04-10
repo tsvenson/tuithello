@@ -1,3 +1,16 @@
+Board {
+    layout: grid;
+    grid-size: 8 8;
+    width: 32;
+    height: 24;
+}
+
+Square {
+    width: 4;
+    height: 3;
+    border: solid;
+}
+
 #board {
     align: center middle;
 }
