@@ -3,14 +3,14 @@ Tuithello is an Othello game that runs in the terminal.
 """
 from textual.app import App, ComposeResult
 from textual.containers import Container
-from textual.widgets import Header, Footer
+from textual.widgets import Header, Footer, Label
 
 from tuithello.board import Board
 
 
 class TuithelloApp(App):
     """The Tuithello app to run the game."""
-    CSS_PATH = "tuithello.css"
+    CSS_PATH = "tuithello.tcss"
 
     TITLE = "Tuithello"
 
@@ -21,7 +21,8 @@ class TuithelloApp(App):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield Container(Board(), id="board")
+        with Container(id="board"):
+            yield Board()
         yield Footer()
     
     def action_toggle_dark(self) -> None:

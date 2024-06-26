@@ -1,4 +1,5 @@
 from textual.app import ComposeResult
+from textual.containers import Container, Grid
 from textual.widget import Widget
 from textual.widgets import Button
 
@@ -40,6 +41,7 @@ class Board(Widget):
         Returns:
             ComposeResults: The squares on the board grid.
         """
-        for row in range(1, 9):
-            for col in range(1, 9):
-                yield Square(row, col)
+        with Grid():
+            for row in range(1, 9):
+                for col in range(1, 9):
+                    yield Square(row, col)
